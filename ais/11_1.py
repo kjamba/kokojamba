@@ -1,13 +1,13 @@
 class tic_tac_toe():
-    board = list(range(1,10))
+    board = list(range(1,10))                                                                   #заполнение доски числами от 1 от 9
 
     def draw_board(self):
         print('-' * 13)
         for i in range(3):
-            print ("|", self.board[0+i*3], "|", self.board[1+i*3], "|", self.board[2+i*3], "|")
+            print ("|", self.board[0+i*3], "|", self.board[1+i*3], "|", self.board[2+i*3], "|") # рисуем псевдодоску в консоли
         print ("-" * 13)
     
-    def take_input(self, player_token):
+    def take_input(self, player_token):                                                         # принимаем ввод юзверя
         valid = False
         while not valid:
             player_answer = input('Куда поставим {0}?'.format(player_token))
@@ -25,14 +25,14 @@ class tic_tac_toe():
             else:
                 print ("Некорректный ввод. Введите число от 1 до 9 чтобы походить.")
 
-    def check_win(self):
-        win_coord = ((0,1,2),(3,4,5),(6,7,8),(0,3,6),(1,4,7),(2,5,8),(0,4,8),(2,4,6))
+    def check_win(self):                                                                         # начиная с 5 хода(3 ход первого игрока)
+        win_coord = ((0,1,2),(3,4,5),(6,7,8),(0,3,6),(1,4,7),(2,5,8),(0,4,8),(2,4,6))            # проверяем не победил ли кто-нибудь
         for each in win_coord:
             if self.board[each[0]] == self.board[each[1]] == self.board[each[2]]:
                 return self.board[each[0]]
         return False
 
-    def main(self):
+    def main(self):                                                                              # описываем общий алгоритм в мейне
         counter = 0
         win = False
         while not win:
@@ -52,5 +52,5 @@ class tic_tac_toe():
                 print ("Ничья!")
                 break
         self.draw_board()
-
-tic_tac_toe().main()
+    
+tic_tac_toe().main()                                                                             # вызываем функцию main
