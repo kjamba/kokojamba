@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h1 class="mt-4">Концерт: {{get_concert.artist}}</h1>
+<p><a href="/">Вернуться назад</a></p>
+
+<p><b>Дата концерта: </b> {{get_concert.date}}</p>
+<p><b>Время концерта: </b> {{get_concert.time}}</p>
+<p><b>Место проведения: </b> {{get_concert.place}}</p>
+<p><b>Описание: </b> {{get_concert.description}}</p>
+
+<p class="nav-item">
+    <a class="nav-link active" href="{{get_concert.ticket}}">Купить билет</a>
+</p>
+
+
+{% endblock %}
